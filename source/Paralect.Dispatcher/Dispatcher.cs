@@ -28,16 +28,14 @@ namespace Paralect.Dispatcher
             {
                 var handler = _container.Resolve(handlerType);
 
-                var methodInfo = handler.GetType().GetMethod("Handle", new[] { message.GetType() });
+//                var methodInfo = handler.GetType().GetMethod("Handle", new[] { message.GetType() });
+//                methodInfo.Invoke(handler, new [] {message });
 
-                methodInfo.Invoke(handler, new [] {message });
 
-/*
                 dynamic dynamicHandler = handler;
                 dynamic dynamicMessage = message;
 
                 dynamicHandler.Handle(dynamicMessage);
-*/
             }
         }
     }

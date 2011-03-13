@@ -17,6 +17,9 @@ namespace Paralect.Dispatcher.Test.Tests
         public void Simple()
         {
             var unity = new UnityContainer();
+            var tracker = new Tracker();
+            unity.RegisterInstance(tracker);
+
             var registar = new HandlerRegistrator(unity);
             registar.RegisterAssemblies(new Assembly[] { Assembly.GetExecutingAssembly() });
 
@@ -28,7 +31,9 @@ namespace Paralect.Dispatcher.Test.Tests
             var message2 = new SimpleMessage2();
             dispatcher.Dispatch(message2);
 
-
+            Assert.AreEqual(2, tracker.Handlers.Count);
+            Assert.AreEqual(typeof(SimpleMessage), tracker.Handlers[0]);
+            Assert.AreEqual(typeof(SimpleMessage2), tracker.Handlers[1]);
         }
     }
 }

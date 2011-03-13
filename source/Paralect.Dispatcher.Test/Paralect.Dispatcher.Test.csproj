@@ -52,6 +52,7 @@
     <Compile Include="Messages\SimpleMessage2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\SimpleTest.cs" />
+    <Compile Include="Tracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Paralect.Dispatcher\Paralect.Dispatcher.csproj">
