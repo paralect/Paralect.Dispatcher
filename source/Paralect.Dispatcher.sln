@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paralect.Dispatcher", "Paralect.Dispatcher\Paralect.Dispatcher.csproj", "{51F8F013-21E2-4795-95FC-854C89DEF026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paralect.Dispatcher.Test", "Paralect.Dispatcher.Test\Paralect.Dispatcher.Test.csproj", "{758F8CB3-DDE5-47F7-AAD5-6541014747CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51F8F013-21E2-4795-95FC-854C89DEF026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F8F013-21E2-4795-95FC-854C89DEF026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F8F013-21E2-4795-95FC-854C89DEF026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F8F013-21E2-4795-95FC-854C89DEF026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758F8CB3-DDE5-47F7-AAD5-6541014747CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758F8CB3-DDE5-47F7-AAD5-6541014747CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758F8CB3-DDE5-47F7-AAD5-6541014747CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758F8CB3-DDE5-47F7-AAD5-6541014747CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
