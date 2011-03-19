@@ -27,25 +27,18 @@ namespace Paralect.Dispatcher
 
         public void RegisterAssemblies(Assembly[] assemblies)
         {
-            foreach (var assembly in assemblies)
-            {
-                var searchTarget = typeof(IHandler<>);
+            var searchTarget = typeof(IHandler<>);
 
-                var dict = assembly
-                    .GetTypes()
-                    .SelectMany(t => t.GetInterfaces()
-                                      .Where(i => i.IsGenericType
-                                          && (i.GetGenericTypeDefinition() == searchTarget)
-                                          && !i.ContainsGenericParameters),
-                                (t, i) => new { Key = i.GetGenericArguments()[0], Value = t })
-                    .GroupBy(x => x.Key, x => x.Value)
-                    .ToDictionary(g => g.Key, g => g.ToList());
+            var dict = assemblies.SelectMany(a => a.GetTypes())
+                .SelectMany(t => t.GetInterfaces()
+                                    .Where(i => i.IsGenericType
+                                        && (i.GetGenericTypeDefinition() == searchTarget)
+                                        && !i.ContainsGenericParameters),
+                            (t, i) => new { Key = i.GetGenericArguments()[0], Value = t })
+                .GroupBy(x => x.Key, x => x.Value)
+                .ToDictionary(g => g.Key, g => g.ToList());
 
-                // TODO: only on assembly! NOT COMPLETED AT ALL!!!111
-                // AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes(). //etc
-                //
-                _subscription = dict; 
-            }
+            _subscription = dict; 
         }
 
         public List<Type> GetHandlersType(Type messageType)

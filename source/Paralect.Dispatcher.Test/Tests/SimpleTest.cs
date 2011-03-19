@@ -20,10 +20,10 @@ namespace Paralect.Dispatcher.Test.Tests
             var tracker = new Tracker();
             unity.RegisterInstance(tracker);
 
-            var registar = new HandlerRegistrator(unity);
-            registar.RegisterAssemblies(new Assembly[] { Assembly.GetExecutingAssembly() });
+            var registrator = new HandlerRegistrator(unity);
+            registrator.RegisterAssemblies(new[] { Assembly.GetExecutingAssembly() });
 
-            var dispatcher = new Dispatcher(unity, registar);
+            var dispatcher = new Dispatcher(unity, registrator);
 
             var message = new SimpleMessage();
             dispatcher.Dispatch(message);

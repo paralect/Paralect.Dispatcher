@@ -31,7 +31,6 @@ namespace Paralect.Dispatcher
 //                var methodInfo = handler.GetType().GetMethod("Handle", new[] { message.GetType() });
 //                methodInfo.Invoke(handler, new [] {message });
 
-
                 dynamic dynamicHandler = handler;
                 dynamic dynamicMessage = message;
 
